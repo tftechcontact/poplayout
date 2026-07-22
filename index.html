@@ -742,7 +742,36 @@
         </div>
     </footer>
 
-    <script>
+	<script>
+  document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+    const track = wrapper.querySelector('.carousel-track');
+    const images = wrapper.querySelectorAll('.carousel-track img');
+    const prevBtn = wrapper.querySelector('.prev-btn');
+    const nextBtn = wrapper.querySelector('.next-btn');
+    let index = 0;
+
+    function updateSlide() {
+      const width = wrapper.clientWidth;
+      track.style.transform = `translateX(${-index * width}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      index = (index === images.length - 1) ? 0 : index + 1;
+      updateSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index === 0) ? images.length - 1 : index - 1;
+      updateSlide();
+    });
+
+    window.addEventListener('resize', updateSlide);
+  });
+</script>
+	
+    <!--
+	for one img carousel, before I input the 2nd carousel.
+	<script>
     const track = document.querySelector('.carousel-track');
     const images = document.querySelectorAll('.carousel-track img');
     const prevBtn = document.querySelector('.prev-btn');
@@ -767,6 +796,7 @@
 
     window.addEventListener('resize', updateSlide);
 </script>
+	-->
 
 </body>
 </html>
