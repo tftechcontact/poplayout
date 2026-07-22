@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Popular Layout </title>
+  <link rel="canonical" href="https://yourdomain.com/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="ty-favicon.png?v=2">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* The structural grid container that maps content perfectly and binds the footer to the true bottom */
+        html, body {
+            height: 100%;
+        }
+        body {
+            zoom: 92%;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #cfbd9a; 
+            line-height: 1.6;
+            display: grid;
+            grid-template-rows: 1fr auto;
+            position: relative;
+            overflow-x: hidden; 
+        }
+
+        /* Core container to house all content and anchor relative background items naturally - bottom padding reduced */
+        .page-main-content-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 20px;
+        }
+
+        /* Absolute background shapes now map accurately against the wrapper container */
+        .bg-shape {
+            position: absolute;
+            z-index: -1; 
+        }
+        
+        .shape-roof {
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 180px;
+            background-color: #756356;
+            opacity: 0.15;
+            clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+        }
+        .shape-tri-1 {
+            top: 420px;
+            left: -30px;
+            width: 260px; 
+            height: 220px;
+            background-color: #756356;
+            opacity: 0.12;
+            clip-path: polygon(0% 10%, 100% 20%, 60% 90%); 
+        }
+        .shape-tri-2 {
+            bottom: 300px;
+            left: -50px;
+            width: 290px; 
+            height: 240px;
+            background-color: #2c2520;
+            opacity: 0.08;
+            clip-path: polygon(0% 0%, 100% 40%, 20% 100%); 
+        }
+        .shape-tri-3 {
+            bottom: 40px;
+            left: -40px;
+            width: 280px; 
+            height: 250px;
+            background-color: #756356;
+            opacity: 0.14;
+            clip-path: polygon(10% 0%, 100% 60%, 0% 80%); 
+        }
+
+        .shape-cube {
+            top: 60px;
+            left: 20px;
+            width: 90px;
+            height: 90px;
+            background-color: #2c2520;
+            opacity: 0.1;
+            border-radius: 4px;
+            transform: rotate(15deg);
+        }
+        .shape-cube-2 {
+            top: 380px;
+            left: -15px;
+            width: 75px;
+            height: 75px;
+            background-color: #2c2520;
+            opacity: 0.08;
+            border-radius: 3px;
+            transform: rotate(-22deg);
+        }
+        .shape-cube-3 {
+            top: 680px;
+            left: 35px;
+            width: 110px;
+            height: 110px;
+            background-color: #2c2520;
+            opacity: 0.07;
+            border-radius: 6px;
+            transform: rotate(40deg);
+        }
+        .shape-cube-4 {
+            bottom: 450px;
+            left: -30px;
+            width: 85px;
+            height: 85px;
+            background-color: #2c2520;
+            opacity: 0.12;
+            border-radius: 4px;
+            transform: rotate(12deg);
+        }
+        .shape-cube-5 {
+            bottom: 220px;
+            left: 15px;
+            width: 95px;
+            height: 95px;
+            background-color: #2c2520;
+            opacity: 0.09;
+            border-radius: 5px;
+            transform: rotate(-18deg);
+        }
+        .shape-cube-6 {
+            bottom: 10px;
+            left: -10px;
+            width: 70px;
+            height: 70px;
+            background-color: #2c2520;
+            opacity: 0.11;
+            border-radius: 2px;
+            transform: rotate(33deg);
+        }
+
+        .shape-sm-cube-1 {
+            top: 160px;
+            left: 140px;
+            width: 40px;
+            height: 40px;
+            background-color: #514339;
+            opacity: 0.13;
+            border-radius: 3px;
+            transform: rotate(45deg);
+        }
+        .shape-sm-cube-2 {
+            top: 550px;
+            left: 25px;
+            width: 45px;
+            height: 45px;
+            background-color: #514339;
+            opacity: 0.11;
+            border-radius: 2px;
+            transform: rotate(-15deg);
+        }
+        .shape-sm-cube-3 {
+            top: 820px;
+            left: -10px;
+            width: 35px;
+            height: 35px;
+            background-color: #514339;
+            opacity: 0.15;
+            border-radius: 3px;
+            transform: rotate(28deg);
+        }
+        .shape-sm-cube-4 {
+            bottom: 380px;
+            left: 60px;
+            width: 50px;
+            height: 50px;
+            background-color: #514339;
+            opacity: 0.09;
+            border-radius: 4px;
+            transform: rotate(-35deg);
+        }
+        .shape-sm-cube-5 {
+            bottom: 140px;
+            left: 10px;
+            width: 38px;
+            height: 38px;
+            background-color: #514339;
+            opacity: 0.14;
+            border-radius: 2px;
+            transform: rotate(18deg);
+        }
+        .shape-sm-cube-6 {
+            bottom: 80px;
+            left: -20px;
+            width: 42px;
+            height: 42px;
+            background-color: #514339;
+            opacity: 0.12;
+            border-radius: 3px;
+            transform: rotate(50deg);
+        }
+
+        .shape-mid-cube-1 {
+            top: 270px;
+            left: 80px;
+            width: 60px;
+            height: 60px;
+            background-color: #42352b; 
+            opacity: 0.1;
+            border-radius: 4px;
+            transform: rotate(25deg);
+        }
+        .shape-mid-cube-2 {
+            top: 490px;
+            left: 110px;
+            width: 55px;
+            height: 55px;
+            background-color: #42352b;
+            opacity: 0.12;
+            border-radius: 3px;
+            transform: rotate(-40deg);
+        }
+        .shape-mid-cube-3 {
+            bottom: 500px;
+            left: 120px;
+            width: 65px;
+            height: 65px;
+            background-color: #42352b;
+            opacity: 0.08;
+            border-radius: 5px;
+            transform: rotate(15deg);
+        }
+        .shape-mid-cube-4 {
+            bottom: 290px;
+            left: 90px;
+            width: 50px;
+            height: 50px;
+            background-color: #42352b;
+            opacity: 0.11;
+            border-radius: 4px;
+            transform: rotate(-10deg);
+        }
+        .shape-mid-cube-5 {
+            bottom: 110px;
+            left: 45px;
+            width: 58px;
+            height: 58px;
+            background-color: #42352b;
+            opacity: 0.13;
+            border-radius: 3px;
+            transform: rotate(62deg);
+        }
+
+        .shape-line {
+            top: 210px;
+            left: 0;
+            width: 100%;
+            max-width: 1100px;
+            height: 8px;
+            background-color: #7a828a;
+            opacity: 0.6;
+            border-radius: 0 4px 4px 0;
+        }
+        .shape-line-angled {
+            top: 190px;
+            left: 0;
+            width: 100%;
+            max-width: 1100px;
+            height: 8px;
+            background-color: #7a828a;
+            opacity: 0.5;
+            border-radius: 0 4px 4px 0;
+            transform-origin: top left;
+            transform: rotate(20deg);
+        }
+
+        h1 {
+            font-family: 'Cookie', cursive;
+            font-size: 4rem;
+            color: #2c2520;
+            margin-top: 60px; 
+            margin-bottom: 10px;
+        }
+        
+        .hero-banner {
+            background-color: #2c2520;
+            color: #f4efe6;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 30px; 
+        }
+        .hero-title {
+            font-family: 'Cookie', cursive;
+            font-size: 3rem;
+            color: #cfbd9a;
+            margin-bottom: 5px;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        section {
+            padding: 0 40px;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-one {
+            text-align: center;
+        }
+        
+        /* Main content section - reduced bottom margin for tighter spacing with the footer */
+        .section-three {
+            display: block;
+            background-color: #f4efe6; 
+            border: 4px solid #756356; 
+            border-radius: 8px; 
+            padding: 40px; 
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.75); 
+            text-align: left;
+            font-size: 15px;
+            width: 100%;
+            margin-bottom: 15px; 
+        }
+        
+        .sea-blue-bar {
+            width: 100%;
+            height: 45px;
+            background-color: #1a5f7a; 
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-links {
+            color: #cfbd9a;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .nav-links a {
+            color: #cfbd9a;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+        .nav-links a:hover {
+            opacity: 0.85;
+        }
+        .nav-divider {
+            margin: 0 12px;
+            user-select: none;
+        }
+
+        /* Clean CSS Expandable Article Structural Engine */
+        .article-block {
+            margin-bottom: 35px;
+        }
+        .article-block:last-child {
+            margin-bottom: 0;
+        }
+        .article-block h2 {
+            color: #2c2520;
+            margin-bottom: 8px;
+            font-size: 1.6rem;
+        }
+        .read-more-toggle {
+            display: none;
+        }
+        .article-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        .read-more-label {
+            display: inline-block;
+            color: #1a5f7a;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            user-select: none;
+        }
+        .read-more-label::before {
+            content: "Read More";
+        }
+        .read-more-toggle:checked ~ .article-text {
+            display: block;
+            -webkit-line-clamp: unset;
+        }
+        .read-more-toggle:checked ~ .read-more-label::before {
+            content: "Read Less";
+        }
+
+        /* Interactive contact action element */
+        .email-button {
+            display: inline-block;
+            background-color: #756356;
+            color: #f4efe6;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: opacity 0.2s ease;
+        }
+        .email-button:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #2c2520;
+            color: #f4efe6;
+            padding: 40px 20px;
+        }
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .footer-content img {
+            height: 1.8rem;
+            width: auto;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            body {
+                zoom: 55%;
+            }
+            section {
+                padding: 30px 85px;
+                max-width: 100%;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .section-three {
+                padding: 25px;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-main-content-wrapper">
+        <div class="bg-shape shape-roof"></div>
+        <div class="bg-shape shape-cube"></div>
+        <div class="bg-shape shape-line"></div>
+        <div class="bg-shape shape-line-angled"></div>
+        
+        <div class="bg-shape shape-cube-2"></div>
+        <div class="bg-shape shape-mid-cube-1"></div>
+        <div class="bg-shape shape-tri-1"></div>
+        <div class="bg-shape shape-sm-cube-1"></div>
+        <div class="bg-shape shape-sm-cube-2"></div>
+        <div class="bg-shape shape-mid-cube-2"></div>
+        
+        <div class="bg-shape shape-cube-3"></div>
+        <div class="bg-shape shape-tri-2"></div>
+        <div class="bg-shape shape-sm-cube-3"></div>
+        <div class="bg-shape shape-mid-cube-3"></div>
+        
+        <div class="bg-shape shape-cube-4"></div>
+        <div class="bg-shape shape-sm-cube-4"></div>
+        <div class="bg-shape shape-cube-5"></div>
+        <div class="bg-shape shape-tri-3"></div>
+        <div class="bg-shape shape-mid-cube-4"></div>
+        <div class="bg-shape shape-sm-cube-5"></div>
+        <div class="bg-shape shape-mid-cube-5"></div>
+        <div class="bg-shape shape-sm-cube-6"></div>
+        <div class="bg-shape shape-cube-6"></div>
+
+        <section class="section-one">
+            <div class="text-container">
+                <h1> Popular Layout </h1>
+
+                <div class="sea-blue-bar">
+                    <div class="nav-links">
+                        <a href="index.html">home</a>
+                      <span class="nav-divider">|</span>
+                      <a href="blog.html">blog</a>
+                    </div>
+                </div>
+
+                <div class="hero-banner">
+                    <h2 class="hero-title"> Welcome! </h2>
+                    <p class="hero-subtitle">
+                        Making websites more affordable and easy to manage.
+                    </p>
+                </div>
+
+                <section class="section-three" style="padding: 40px; margin-left: auto; margin-right: auto;">
+                    
+                    <!-- Section 1 -->
+                    <div class="article-block">
+                        <input type="checkbox" id="post-1" class="read-more-toggle">
+                        <h2> Why I like internal style sheets more than external when it's for a static website or a one-page or two-page website.   </h2>
+                        <div class="article-text">                
+                           It's easier to scroll up and down in the code editor rather than having to click back and forth between multiple tabs. If I'm working on a project that has two pages that are straightforward and similar to one another, for most cases, the outline of the style sheet would be consistent between one another. I'm going to have the same header and title for the website, the menu bar is going to be the same, as well as the footer. Usually, the different features will involve the main content such as the text, the images, removing the hero section, and sometimes the layout of the main content sections.
+											<br>	So I put the style sheet in the index file for the homepage and the style sheet in the about file, for example, for the page with the mission statement or the history. Some developers don't like this because it's not best practice or because they feel like there's too much "clutter" in the text editor for that file. And I do understand that with an internal style sheet I have to scroll and scroll, which may become tedious to scroll past through multiple edits. Especially if I go a little overboard with the background graphics. But I guess at that point it's a matter of which practice someone finds more or less tedious. I don't know if you're like me, but I don't want to constantly be switching back and forth between tabs. And I don't have auto save turned on in my IDE so that's an extra step added; clicking the save button. I don't need to add to that.
+											<br> Besides, I'm already dealing with a million open tabs in my browser anyways. And I know the simple solution would be, "Well, then why don't you just close more of those tabs? Since you're so tired of dealing with so many tabs." The rebuttal to that is because well, I'm using them. I'm using all of those tabs. That's why they're open. That's why they're there. I'm already going back and forth between different blocks of code that I'm implementing, and different variations of essentially the same website because I need to see that comparison. There is a difference between an 88% zoom in the style sheet and a 92% zoom in the style sheet or a 98% zoom in the style sheet. Plain and simple, it is just easier to do that visually if I don't have to go to the IDE and make sure that I'm opening up the index.html tab and then going to open up the style.css tab and then making sure I'm saving both of them between different adjustments. The email button in the bottom of the footer is styled the way I want it to be, but maybe it turns out I actually don't like that it's next to the phone number. I don't have to switch between tabs in the editor to make sure of all that. And if I were doing bigger projects, and when I do bigger projects, I definitely have different sheets because it does get a little bit more tedious when you have those bigger projects, especially if there are multiple flexboxes involved. But for static websites, there's just no need for anything but internal style sheets.
+                         
+                        </div>
+                        <label for="post-1" class="read-more-label"></label>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="article-block">
+                        <input type="checkbox" id="post-2" class="read-more-toggle">
+                        <h2>  Um Um what are the most important things to remember? </h2>
+                        <div class="article-text">
+                          Your page keeps breaking. You haven't a clue as to why. You played by the rules. You put in your time. Yet, here you are again with a broken page. Who could the culprit be? Oh, whoever could it be? There's four suspects in the lineup. You need to take a hard long look to see who it is. And these four suspects go by the following: quotation marks, semicolons, a closing section, or a closing div.
+So you need to go back through and check if you have quotation marks around strings, if you're missing a semicolon where it's supposed to be, if you're missing a closing section, or if you've added an extra closing div. These are the highly likely culprits who might just be behind the reason why your page is broken again. 
+                        </div>
+                        <label for="post-2" class="read-more-label"></label>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class="article-block">
+                        <input type="checkbox" id="post-3" class="read-more-toggle">
+                        <h2> Don't forget. Don't forget. Don't forget. I forgot. </h2>
+                        <div class="article-text">
+                        I'll just scroll down and I'll scroll down and I'll keep going through the style sheet, and then something catches my eye. There's a period missing in front of this word. The word is "section." I think to myself, "Oh, I need to put a period there." So that's what I do. I put a period in front of the section container that's before the .section-one container. Then I scroll down and I scroll down, and I keep scrolling until I reach the line of code that I originally intended to edit. I save the file and reload the link in the browser. The whole page is broken.
+I begrudgingly ask myself, "Why?" So I check the text editor and go back over the previous changes I made. Then it dawns on me, "Oh yeah, that's right. I'm not supposed to put a period there." Sometimes I make mistakes while coding; it's part of the process. After I learn what the issue is, what I'm supposed to do usually sticks in my head better. But for some reason with this particular rule, I have to keep reminding myself of it. The section container without the period doesn't have it because it's handling every section without a class in the HTML structure. I don't need to add a period to this particular part. The section-one structure with a period is aimed at one specific class. The fact that it's missing is not a typo.
+
+                        </div>
+                        <label for="post-3" class="read-more-label"></label>
+                    </div>
+                  
+                  <!--
+                    <div class="article-block">
+                        <input type="checkbox" id="post-1" class="read-more-toggle">
+                        <h2> we want agency </h2>
+                        <div class="article-text">                
+                            There's a plethora of options to build websites and it's hard to choose the most feasible option. I've used around 14 different platforms to build or host websites in the last decade. There are platforms with features to move objects around with a mouse but cost $17.00 to $29.00 for monthly subscriptions, or $200 yearly with upgrades or surprise fees. Plus, you don't own the code for that website, so you get stuck paying whatever the cost is or risk losing that website completely. Some platforms require a higher monthly subscription to remove ads or to attach a custom domain. There are plenty of free hosting platforms, but you have to use a subdomain with a bunch of random numbers and letters that nobody will remember. But where is the option for the small business owner that simply wants to showcase some examples of their work at a low price? The business owner or freelancer who gets around 1,000 visitors to their page per month shouldn't pay the same as someone who is getting 10,000 visitors because that's a big difference in bandwidth. We want a sense that we have control over our money and to not be swindled. There's just no need to spend more for less.
+                        </div>
+                        <label for="post-1" class="read-more-label"></label>
+                    </div>
+
+                  
+                    <div class="article-block">
+                        <input type="checkbox" id="post-2" class="read-more-toggle">
+                        <h2> ownership and freedom </h2>
+                        <div class="article-text">
+                            When you own your code, you remove all baseline dependency on third-party pricing changes. Most commercial website builders retain full technical authority over your template layout file assets, locking your data down into proprietary database systems that cannot be exported to raw standard files without losing formatting components entirely. Running static components directly eliminates server processing fees, visual editor security layout bugs, database indexing issues, and complex configuration systems that slow down response metrics.
+                        </div>
+                        <label for="post-2" class="read-more-label"></label>
+                    </div>
+
+                    
+                    <div class="article-block">
+                        <input type="checkbox" id="post-3" class="read-more-toggle">
+                        <h2> simple direct configurations </h2>
+                        <div class="article-text">
+                            I handle the initial setup. I build the website with personalized content for each customer. I provide a block of code that is 100% yours to own. I create an account with a free and vetted hosting platform. I set up a .site or .space or .com domain. Then I hand you the temporary login credentials. All you have to do is update the account's credentials to match your email, password, phone number, and address.
+                        </div>
+                        <label for="post-3" class="read-more-label"></label>
+                    </div>
+                  	-->
+
+                </section>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <a href="mailto:popularlayout@gmail.com" target="_blank" class="email-button">Send Email</a>
+            <p> (513) 266-8720 <br>
+                <b> Operating Hours: </b> 9 am -6 pm EST, M-Sat <br>
+                    Nationwide Services. Based out of Cincinnati, Ohio. <br>
+                &copy; <b> Popular Layout </b> 2026 All Rights Reserved. &nbsp;  <br>
+            
+                <b style="font-size: 0.9rem; color: #f4efe6;">Terms of Service provided at checkout.</b> 
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

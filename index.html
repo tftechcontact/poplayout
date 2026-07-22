@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Popular Layout </title>
+    <link rel="canonical" href="https://yourdomain.com/blog.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="ty-favicon.png?v=2">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            zoom: 92%;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #cfbd9a; 
+            line-height: 1.6;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto auto auto;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden; 
+        }
+
+        /* the squares, lines, and triangles in the background. */
+        .bg-shape {
+            position: absolute;
+            z-index: -1; 
+        }
+        
+        .shape-roof {
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 180px;
+            background-color: #756356;
+            opacity: 0.15;
+            clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+        }
+        .shape-tri-1 {
+            top: 420px;
+            left: -30px;
+            width: 260px; 
+            height: 220px;
+            background-color: #756356;
+            opacity: 0.12;
+            clip-path: polygon(0% 10%, 100% 20%, 60% 90%); 
+        }
+        .shape-tri-2 {
+            top: 920px;
+            left: -50px;
+            width: 290px; 
+            height: 240px;
+            background-color: #2c2520;
+            opacity: 0.08;
+            clip-path: polygon(0% 0%, 100% 40%, 20% 100%); 
+        }
+        .shape-tri-3 {
+            top: 1420px;
+            left: -40px;
+            width: 280px; 
+            height: 250px;
+            background-color: #756356;
+            opacity: 0.14;
+            clip-path: polygon(10% 0%, 100% 60%, 0% 80%); 
+        }
+
+        .shape-cube {
+            top: 60px;
+            left: 20px;
+            width: 90px;
+            height: 90px;
+            background-color: #2c2520;
+            opacity: 0.1;
+            border-radius: 4px;
+            transform: rotate(15deg);
+        }
+        .shape-cube-2 {
+            top: 380px;
+            left: -15px;
+            width: 75px;
+            height: 75px;
+            background-color: #2c2520;
+            opacity: 0.08;
+            border-radius: 3px;
+            transform: rotate(-22deg);
+        }
+        .shape-cube-3 {
+            top: 680px;
+            left: 35px;
+            width: 110px;
+            height: 110px;
+            background-color: #2c2520;
+            opacity: 0.07;
+            border-radius: 6px;
+            transform: rotate(40deg);
+        }
+        .shape-cube-4 {
+            top: 1120px;
+            left: -30px;
+            width: 85px;
+            height: 85px;
+            background-color: #2c2520;
+            opacity: 0.12;
+            border-radius: 4px;
+            transform: rotate(12deg);
+        }
+        .shape-cube-5 {
+            top: 1510px;
+            left: 15px;
+            width: 95px;
+            height: 95px;
+            background-color: #2c2520;
+            opacity: 0.09;
+            border-radius: 5px;
+            transform: rotate(-18deg);
+        }
+        .shape-cube-6 {
+            top: 1850px;
+            left: -10px;
+            width: 70px;
+            height: 70px;
+            background-color: #2c2520;
+            opacity: 0.11;
+            border-radius: 2px;
+            transform: rotate(33deg);
+        }
+
+        .shape-sm-cube-1 {
+            top: 160px;
+            left: 140px;
+            width: 40px;
+            height: 40px;
+            background-color: #514339;
+            opacity: 0.13;
+            border-radius: 3px;
+            transform: rotate(45deg);
+        }
+        .shape-sm-cube-2 {
+            top: 550px;
+            left: 25px;
+            width: 45px;
+            height: 45px;
+            background-color: #514339;
+            opacity: 0.11;
+            border-radius: 2px;
+            transform: rotate(-15deg);
+        }
+        .shape-sm-cube-3 {
+            top: 820px;
+            left: -10px;
+            width: 35px;
+            height: 35px;
+            background-color: #514339;
+            opacity: 0.15;
+            border-radius: 3px;
+            transform: rotate(28deg);
+        }
+        .shape-sm-cube-4 {
+            top: 1020px;
+            left: 60px;
+            width: 50px;
+            height: 50px;
+            background-color: #514339;
+            opacity: 0.09;
+            border-radius: 4px;
+            transform: rotate(-35deg);
+        }
+        .shape-sm-cube-5 {
+            top: 1280px;
+            left: 10px;
+            width: 38px;
+            height: 38px;
+            background-color: #514339;
+            opacity: 0.14;
+            border-radius: 2px;
+            transform: rotate(18deg);
+        }
+        .shape-sm-cube-6 {
+            top: 1680px;
+            left: -20px;
+            width: 42px;
+            height: 42px;
+            background-color: #514339;
+            opacity: 0.12;
+            border-radius: 3px;
+            transform: rotate(50deg);
+        }
+
+        .shape-mid-cube-1 {
+            top: 270px;
+            left: 80px;
+            width: 60px;
+            height: 60px;
+            background-color: #42352b; 
+            opacity: 0.1;
+            border-radius: 4px;
+            transform: rotate(25deg);
+        }
+        .shape-mid-cube-2 {
+            top: 490px;
+            left: 110px;
+            width: 55px;
+            height: 55px;
+            background-color: #42352b;
+            opacity: 0.12;
+            border-radius: 3px;
+            transform: rotate(-40deg);
+        }
+        .shape-mid-cube-3 {
+            top: 960px;
+            left: 120px;
+            width: 65px;
+            height: 65px;
+            background-color: #42352b;
+            opacity: 0.08;
+            border-radius: 5px;
+            transform: rotate(15deg);
+        }
+        .shape-mid-cube-4 {
+            top: 1390px;
+            left: 90px;
+            width: 50px;
+            height: 50px;
+            background-color: #42352b;
+            opacity: 0.11;
+            border-radius: 4px;
+            transform: rotate(-10deg);
+        }
+        .shape-mid-cube-5 {
+            top: 1740px;
+            left: 45px;
+            width: 58px;
+            height: 58px;
+            background-color: #42352b;
+            opacity: 0.13;
+            border-radius: 3px;
+            transform: rotate(62deg);
+        }
+
+        .shape-line {
+            top: 210px;
+            left: 0;
+            width: 100%;
+            max-width: 1100px;
+            height: 8px;
+            background-color: #7a828a;
+            opacity: 0.6;
+            border-radius: 0 4px 4px 0;
+        }
+        .shape-line-angled {
+            top: 190px;
+            left: 0;
+            width: 100%;
+            max-width: 1100px;
+            height: 8px;
+            background-color: #7a828a;
+            opacity: 0.5;
+            border-radius: 0 4px 4px 0;
+            transform-origin: top left;
+            transform: rotate(20deg);
+        }
+
+        h1 {
+            font-family: 'Cookie', cursive;
+            font-size: 4rem;
+            color: #2c2520;
+            margin-top: 60px; 
+            margin-bottom: 10px;
+        }
+        
+        .hero-banner {
+            background-color: #2c2520;
+            color: #f4efe6;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 30px; 
+        }
+        .hero-title {
+            font-family: 'Cookie', cursive;
+            font-size: 3rem;
+            color: #cfbd9a;
+            margin-bottom: 5px;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .about-heading {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #2c2520;
+        }
+        section {
+            padding: 0 40px;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-one {
+            text-align: center;
+        }
+        .about-block {
+            background-color: #f4efe6; 
+            border: 4px solid #756356; 
+            border-radius: 8px; 
+            padding: 40px; 
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.75), 0 15px 30px rgba(0, 0, 0, 0.75);
+            text-align: left;
+            font-size: 14px;
+            width: 100%;
+            margin-bottom: 30px; 
+        }
+        .section-two-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            width: 100%;
+            margin-bottom: 30px; 
+        }  
+        .section-three {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background-color: #f4efe6; 
+            border: 4px solid #756356; 
+            border-radius: 8px; 
+            padding: 40px; 
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.75); 
+            text-align: left;
+            font-size: 15px;
+            width: 100%;
+            margin-bottom: 30px; 
+        }
+        .section-four {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background-color: #f4efe6; 
+            border: 4px solid #756356; 
+            border-radius: 8px; 
+            padding: 40px; 
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.75); 
+            text-align: left;
+            width: 100%;
+            margin-bottom: 60px; 
+        }
+        .contact-card, .checkout-card {
+            flex: 1 1 450px;
+            background-color: #f4efe6;
+            border: 4px solid #756356;
+            border-radius: 8px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.75);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-card h3, .checkout-card h3 {
+            font-size: 1.8rem;
+            color: #2c2520;
+            margin-bottom: 15px;
+        }
+     
+        .contact-card p, .checkout-card p {
+            color: #2c2520;
+            margin-bottom: 20px;
+            max-width: 400px;
+        }
+      
+        .left-align-group {
+            text-align: left;
+            width: 100%;
+            max-width: 100%;
+        }
+      
+        .email-button {
+            display: inline-block;
+            background-color: #756356;
+            color: #f4efe6;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        /* Updated Blue Nav Bar configuration with nested link parameters */
+        .sea-blue-bar {
+            width: 100%;
+            height: 45px;
+            background-color: #1a5f7a; 
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .sea-blue-bar a {
+            color: #2c2520;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+        .sea-blue-bar a:hover {
+            opacity: 0.7;
+        }
+        .sea-blue-bar .separator {
+            color: #2c2520;
+        }
+
+        /* carousel */
+        .carousel-wrapper {
+            width: 460px;
+            height: 340px;
+            overflow: hidden;
+            border-radius: 6px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            width: 600%;
+            height: 100%;
+            transition: transform 0.4s ease-in-out;
+        }
+        .carousel-track img {
+            width: 460px;
+            height: 340px;
+            object-fit: fill;
+            display: block;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(44, 37, 32, 0.7);
+            color: #f4efe6;
+            border: none;
+            font-size: 2rem;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 4px;
+        }
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+
+        .section-four .media-container img {
+            width: 460px;       
+            height: 340px;      
+            display: block;
+            object-fit: fill;   
+            border-radius: 6px;
+            margin: 0 auto; 
+        }
+        .carousel-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .carousel-description {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 460px;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #2c2520;
+            color: #f4efe6;
+            padding: 40px 20px;
+        }
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .footer-content img {
+            height: 1.8rem;
+            width: auto;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            body {
+                zoom: 55%;
+            }
+            section {
+                padding: 30px 85px;
+                max-width: 100%;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .section-two-grid, .section-three, .section-four {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .contact-card, .checkout-card, .about-block, .section-three, .section-four {
+                padding: 25px;
+            }
+            .section-four .text-container {
+                order: 2;
+            }
+            .section-four .media-container {
+                order: 1;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+            .about-heading {
+                font-size: 1.8rem;
+            }
+            .carousel-wrapper {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 460 / 340;
+            }
+            .carousel-track {
+                transition: transform 0.4s ease-in-out;
+            }
+            .carousel-track img {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 460 / 340;
+            }
+            .section-four .media-container img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-shape shape-roof"></div>
+    <div class="bg-shape shape-cube"></div>
+    <div class="bg-shape shape-line"></div>
+    <div class="bg-shape shape-line-angled"></div>
+    
+    <div class="bg-shape shape-cube-2"></div>
+    <div class="bg-shape shape-mid-cube-1"></div>
+    <div class="bg-shape shape-tri-1"></div>
+    <div class="bg-shape shape-sm-cube-1"></div>
+    <div class="bg-shape shape-sm-cube-2"></div>
+    <div class="bg-shape shape-mid-cube-2"></div>
+    
+    <div class="bg-shape shape-cube-3"></div>
+    <div class="bg-shape shape-tri-2"></div>
+    <div class="bg-shape shape-sm-cube-3"></div>
+    <div class="bg-shape shape-mid-cube-3"></div>
+    
+    <div class="bg-shape shape-cube-4"></div>
+    <div class="bg-shape shape-sm-cube-4"></div>
+    <div class="bg-shape shape-cube-5"></div>
+    <div class="bg-shape shape-tri-3"></div>
+    <div class="bg-shape shape-mid-cube-4"></div>
+    <div class="bg-shape shape-sm-cube-5"></div>
+    <div class="bg-shape shape-mid-cube-5"></div>
+    <div class="bg-shape shape-sm-cube-6"></div>
+    <div class="bg-shape shape-cube-6"></div>
+
+    <section class="section-one">
+        <div class="text-container">
+            <h1> Popular Layout </h1>
+
+           <!-- Links successfully added directly inside the blue nav bar container -->
+							<div class="sea-blue-bar">
+    						<a href="\">home</a>
+    					<span class="separator">|</span>
+  					  <a href="blog/html" title="/blog">blog</a>
+							</div>
+            <div class="hero-banner">
+                <h2 class="hero-title"> Welcome! </h2>
+                <p class="hero-subtitle">
+                    Making websites more affordable and easy to manage.
+                </p>
+            </div>
+
+            <div class="about-block">
+                <h2 class="about-heading"><u> About </u></h2>
+                <hr style="border: 0; height: 1px; background: #2c2520; margin: 10px 0;">
+                
+                <p class="about-content"> 
+                    
+                    <b> Business Model: </b> Making one-to-two-page websites for small business owners. Like having an online business card.
+                    <br>
+                    <b> Benefits: </b> Affordable, website ownership, free hosting, plus a higher potential for repeat customers and new customers.
+                    <br>
+                    <b> Focus: </b> Building a static website for small businesses. Handling the initial setup of the purchased domain and the free hosting platform. 
+                    <br>
+                    <b> Meaning: </b> A static website doesn't utilize as much data and memory, and a small business doesn't need a book's worth of content; it's straight to the point. A hosting platform is where those files are held and run on the internet, and a domain is the URL a person uses for their website like .com or .site or .space.
+                    <br>
+                    <b> Best For: </b> Small contractors, independent contractors, and freelancers - such as Residential Contractors, Handymen, Electricians, Plumbers, Tutors, Painters, Artists, Authors.
+
+                </p>
+            </div>
+
+            <!-- "we want agency" section directly underneath the about block -->
+            <section class="section-three" style="padding: 40px; margin-left: auto; margin-right: auto;">
+                <div class="text-container" style="text-align: left;">
+                    <h2> we want agency </h2>
+                    <p style="margin-top: 10px;">                
+                        There's a plethora of options to build websites and it's hard to choose the most feasible option. I've used around 14 different platforms to build or host websites in the last decade. There are platforms with features to move objects around with a mouse but cost $17.00 to $29.00 for monthly subscriptions, or $200 yearly with upgrades or surprise fees. Plus, you don't own the code for that website, so you get stuck paying whatever the cost is or risk losing that website completely. Some platforms require a higher monthly subscription to remove ads or to attach a custom domain. There are plenty of free hosting platforms, but you have to use a subdomain with a bunch of random numbers and letters that nobody will remember. But where is the option for the small business owner that simply wants to showcase some examples of their work at a low price? The business owner or freelancer who gets around 1,000 visitors to their page per month shouldn't pay the same as someone who is getting 10,000 visitors because that's a big difference in bandwidth. We want a sense that we have control over our money and to not be swindled. There's just no need to spend more for less.
+                    </p>
+                    <br>  
+                    
+                    <p> <b> I handle the initial setup. </b> I build the website with personalized content for each customer. I provide a block of code that is 100% yours to own. I create an account with a free and vetted hosting platform. I set up a .site or .space or .com domain. Then I hand you the temporary login credentials. All you have to do is update the account's credentials to match your email, password, phone number, and address.  
+                    </p>
+                </div>
+               
+                <div class="carousel-container">
+                    <!-- New additional image carousel directly above the description -->
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev-btn">&#10094;</button>
+                        <button class="carousel-btn next-btn">&#10095;</button>
+                        <div class="carousel-track">
+                            <img src="2017to2021.jpg" alt="Carousel Image One">
+                            <img src="2020.jpg" alt="Carousel Image Two">
+                            <img src="2021.jpg" alt="Carousel Image Three">
+                            <img src="api2021.jpg" alt="Carousel Image Four">
+                            <img src="2022.jpg" alt="Carousel Image Five">
+                            <img src="2023.jpg" alt="Carousel Image Six">
+                        </div>
+                    </div>
+
+                    <!-- Already existing description in the middle of both of them -->
+                    <div class="carousel-description">
+                        <p>a collection of photographs, and screenshots of previous design and development projects.</p>
+                    </div>
+
+                    <!-- Existing image carousel -->
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev-btn">&#10094;</button>
+                        <button class="carousel-btn next-btn">&#10095;</button>
+                        <div class="carousel-track">
+                            <img src="2017to2021.jpg" alt="Carousel Image One">
+                            <img src="2020.jpg" alt="Carousel Image Two">
+                            <img src="2021.jpg" alt="Carousel Image Three">
+                            <img src="api2021.jpg" alt="Carousel Image Four">
+                            <img src="2022.jpg" alt="Carousel Image Five">
+                            <img src="2023.jpg" alt="Carousel Image Six">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grid container containing contact & checkout cards below the first two main blocks -->
+            <div class="section-two-grid" style="margin-top: 30px;">
+                <div class="contact-card">
+                    <h3><u>Contact Information</u></h3>
+                    <p>Call at (513) 266-8720</p>
+                    <p>For services, please email: </p>
+                    <a href="mailto:popularlayout@gmail.com" target="_blank" class="email-button">Send Email</a>
+                </div>
+                <div class="checkout-card">
+                    <h3><u>    </u></h3>
+                    <p> <b> Operating Hours: </b> 9 am -6 pm EST, M-Sat </p>
+                    <p> <b> Service Areas: </b> Nationwide Services. <br> Based out of Cincinnati, Ohio. </p>
+                    
+                    <div class="left-align-group">
+                        <p style="font-size: 15px; margin-bottom: 5px; padding-left: 10px;"> <b>Pricing Model:</b> <br>
+                          <span style="white-space: nowrap;"> <u>Summer Sale:</u>  $32.00 per one-page website & initial setup</span>
+    <br> <u>Summer Sale:</u>  $35.00 per two-page website & initial setup
+    <br>  $1.18 - $1.98 for .site or .space domains
+    <br> $11.18 per .com domain
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <!-- Agent Ms. Dev section sitting below the previous containers -->
+    <section class="section-four">
+        <div class="text-container">
+            <h2> Agent Ms. Dev </h2>
+                <p>  
+                    technical skills: HTML, CSS, UI/UX best practices. front end web development and web design.
+                </p>
+            <div style="margin-top: 10px; padding-left: 20px;">
+                <ul>
+                    <li> 
+                      Certified HTML Developer, W3Schools, Oct 2019. 
+                    </li>
+                    <li style="margin-top: 5px;">
+                      Certified Professional Development, Customer Care Skills and Telephone Etiquette Course, Alison: Online Courses, November 17, 2025.
+                    </li>  
+                </ul>   
+            </div>
+            <br>
+            <div>
+                <h3><u> Upcoming Accomplishments by 2026   </u></h3>
+                    <p> acquire DBA in Ohio </p>
+                    <p> acquire P.O. Box </p>
+                    <p> BBB Accreditation </p>
+            </div>
+        </div>
+        <div class="media-container">
+            <img src="collage.jpg" alt="collage">
+        </div>
+    </section>   
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <a href="mailto:popularlayout@gmail.com" target="_blank" class="email-button">Send Email</a>
+            <p> (513) 266-8720 <br>
+                <b> Operating Hours: </b> 9 am -6 pm EST, M-Sat <br>
+                    Nationwide Services. Based out of Cincinnati, Ohio. <br>
+                &copy; <b> Popular Layout </b> 2026 All Rights Reserved. &nbsp;  <br>
+            
+                <b style="font-size: 0.9rem; color: #f4efe6;">Terms of Service provided at checkout.</b> 
+            </p>
+        </div>
+    </footer>
+
+    <script>
+    const track = document.querySelector('.carousel-track');
+    const images = document.querySelectorAll('.carousel-track img');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let index = 0;
+    const maxIndex = images.length - 1;
+
+    function updateSlide() {
+        const width = document.querySelector('.carousel-wrapper').clientWidth;
+        track.style.transform = `translateX(${-index * width}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        index = (index === maxIndex) ? 0 : index + 1;
+        updateSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        index = (index === 0) ? maxIndex : index - 1;
+        updateSlide();
+    });
+
+    window.addEventListener('resize', updateSlide);
+</script>
+
+</body>
+</html>
